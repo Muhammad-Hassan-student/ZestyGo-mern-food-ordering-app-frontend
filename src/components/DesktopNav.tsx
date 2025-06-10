@@ -1,4 +1,4 @@
-import { appColor, appTextColor, appTextHoverColor } from "@/app/const";
+import { appTextHoverColor } from "@/app/const";
 import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import UsernameMenu from "./UsernameMenu";
