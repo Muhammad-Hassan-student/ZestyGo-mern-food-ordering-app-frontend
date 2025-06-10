@@ -1,0 +1,14 @@
+//NOTE - FRONTEND
+//SECTION - SET UP
+
+https://ui.shadcn.com/docs/installation/vite
+
+STEP 1 - npm create vite@latest
+STEP 2 - npm I
+
+//TODO - TAILWIND CSS
+STEP 3 - npm install tailwindcss @tailwindcss/vite
+STEP 4 - src/index.css
+ @import "tailwindcss";
+
+
