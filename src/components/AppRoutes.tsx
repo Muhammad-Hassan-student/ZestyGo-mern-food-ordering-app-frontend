@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthCallBack } from "@/pages/AuthCallback";
 import UserProfilePage from "@/pages/UserProfilePage";
 import ProtectedRoute from "@/api/ProtectedRoute";
+import ManageRestaurant from "@/pages/ManageRestaurant";
 
 export const AppRoutes = () => {
   return (
@@ -23,6 +24,14 @@ export const AppRoutes = () => {
           element={
             <Layout>
               <UserProfilePage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/manage-restaurant"
+          element={
+            <Layout>
+              <ManageRestaurant />
             </Layout>
           }
         />

@@ -8,6 +8,12 @@ const MobileNavLink = () => {
   return (
     <>
       <Link
+        to="/manage-restaurant"
+        className={`font-bold ${appTextHoverColor}`}
+      >
+        Manage Restaurant
+      </Link>
+      <Link
         to={"/user-profile"}
         className={`flex bg-white items-center font-bold ${appTextHoverColor}`}
       >
