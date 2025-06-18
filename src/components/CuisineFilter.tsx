@@ -1,5 +1,4 @@
 import { cuisineList } from "@/config/restaurant-options-config";
-import { Input } from "./ui/input";
 import { Check } from "lucide-react";
 import type { ChangeEvent } from "react";
 import { Button } from "./ui/button";
