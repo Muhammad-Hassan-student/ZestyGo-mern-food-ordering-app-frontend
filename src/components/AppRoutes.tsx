@@ -1,12 +1,13 @@
 import HomePage from "@/pages/HomePage";
 import Layout from "../layout/layout";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AuthCallBack } from "@/pages/AuthCallback";
 import UserProfilePage from "@/pages/UserProfilePage";
 import ProtectedRoute from "@/api/ProtectedRoute";
 import ManageRestaurant from "@/pages/ManageRestaurant";
 import NotFoundPage from "@/pages/PageNotFound";
 import SearchPage from "@/pages/SearchPage";
+import DetailPage from "@/pages/DetailPage";
 
 export const AppRoutes = () => {
   return (
@@ -29,6 +30,15 @@ export const AppRoutes = () => {
         }
       />
 
+      <Route
+        path="/detail/:restaurantId"
+        element={
+          <Layout>
+            <DetailPage />
+          </Layout>
+        }
+      />
+
       <Route element={<ProtectedRoute />}>
         <Route
           path="/user-profile"
@@ -47,7 +57,7 @@ export const AppRoutes = () => {
           }
         />
       </Route>
-      <Route path="*" element={<NotFoundPage />} />
+      <Route path="*" element={<Navigate to={"/"} />} />
     </Routes>
   );
 };

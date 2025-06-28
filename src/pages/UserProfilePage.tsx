@@ -12,7 +12,7 @@ const UserProfilePage = () => {
     return <span>Unable to load user profile</span>;
   }
   return (
-    <div className="px-4 md:px-6">
+    <div >
       <UserProfileForm
         currentUser={userArahaHai}
         onSave={updateUser}

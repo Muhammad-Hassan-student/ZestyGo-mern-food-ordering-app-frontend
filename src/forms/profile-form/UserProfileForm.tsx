@@ -27,16 +27,18 @@ const formSchema = z.object({
 });
 
 //Define  types of zod validatio from schema
-type userFormData = z.infer<typeof formSchema>;
+export type userFormData = z.infer<typeof formSchema>;
 
 //Define types of props
 type Props = {
   onSave: (userProfileData: userFormData) => void;
   isLoading: Boolean;
   currentUser: User;
+  title?: string;
+  buttonText?: string;
 };
 
-const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
+const UserProfileForm = ({ onSave, isLoading, currentUser, title = "User Profile Form", buttonText="Save" }: Props) => {
   const form = useForm<userFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: currentUser,
@@ -53,7 +55,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
         className="space-y-4 bg-gray-50 rounded-lg md:py-10 md:px-4"
       >
         <div>
-          <h2 className="text-2xl font-bold">User Profile Form</h2>
+          <h2 className="text-2xl font-bold">{title}</h2>
           <FormDescription>
             View and change your profile information here
           </FormDescription>
@@ -134,7 +136,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
         {isLoading ? (
           <LoadingButton />
         ) : (
-          <Button className={appColor}>Submit</Button>
+          <Button className={`${appColor} cursor-pointer`}>{buttonText}</Button>
         )}
       </form>
     </Form>

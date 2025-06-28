@@ -14,7 +14,7 @@ export default function Layout({ children, showHero = false }: Props) {
       <Header />
       {showHero && <Hero />}
 
-      <div className="container mx-auto flex-1 py-10">{children}</div>
+      <div className="container mx-auto flex-1 py-10 px-2 md:px-4">{children}</div>
       <Footer />
     </div>
   );
